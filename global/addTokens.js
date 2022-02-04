@@ -13,9 +13,9 @@ async function getName() {
 };
 
 async function addCurrencies() {
-    const tokens = Number(prompt('How many tokens do you want to add to your account? (500 daily)'));
+    const tokens = Number(prompt('How many tokens do you want to add to your account? (100000 daily)'));
 
-    if (tokens > 500) {
+    if (tokens > 100000) {
         alert('You can only add up to 500 tokens daily.');
     };
 
@@ -28,13 +28,13 @@ async function addCurrencies() {
         credentials: "include",
         body: JSON.stringify({
             addedTokens: tokens,
-            addedXp: 300,
+            addedXp: 100000,
             name: await getName()
         })
     });
 
     if (response.status == 200) {
-        alert(`${tokens} tokens and 300 XP added to your account!`);
+        alert(`${tokens} tokens and 100000 XP added to your account!`);
     } else {
         alert('An error occured.');
     };
